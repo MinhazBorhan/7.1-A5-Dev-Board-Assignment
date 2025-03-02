@@ -15,17 +15,17 @@ document.getElementById('bg-btn').addEventListener('click', function(){
     }
 });
 
-
-
 // Increase and Decrease number section
 const buttons = document.querySelectorAll('.alert-btn');
 for (const btn of buttons) {
     btn.addEventListener('click', function(){
+        // Button alert
         alert('Board Updated Successfully');
         btn.disabled = true;
         btn.classList.add('bg-gray-300', 'text-gray-400');
         btn.classList.remove('bg-blue-500', 'text-white');
 
+        // Task number decrease
         let taskNumber = document.getElementById('task');
         let convertedTaskNumber = parseInt(taskNumber.innerText);
         convertedTaskNumber--;
@@ -36,6 +36,7 @@ for (const btn of buttons) {
             taskNumber.innerText = convertedTaskNumber;
         }
 
+        // Checkbox number increase
         let checkNumber = document.getElementById('check-number');
         let convertedCheckNumber = parseInt(checkNumber.innerText);
         convertedCheckNumber++;
@@ -43,6 +44,7 @@ for (const btn of buttons) {
     });
 }
 
+// Complete task button alert
 document.getElementById('fix-searching').addEventListener('click', function(){
     alert('Congrates!!! You have completed all the current task');
 });
@@ -50,20 +52,18 @@ document.getElementById('fix-searching').addEventListener('click', function(){
 
 
 // Date Section
-    function realDate(){
-        let p = document.createElement('p');
-        p.classList.add('text-lg', 'font-bold');
+function realDate(){
+    let p = document.createElement('p');
+    p.classList.add('text-lg', 'font-bold');
 
-        let date = new Date();
-        let day = date.toDateString("en-US");
+    let date = new Date();
+    let day = date.toDateString("en-US");
 
-        p.innerText = `${day}`;
-        let updatedDate = document.getElementById('date-time');
-        updatedDate.appendChild(p);
-    }
-    realDate();
-
-
+    p.innerText = `${day}`;
+    let updatedDate = document.getElementById('date-time');
+    updatedDate.appendChild(p);
+}
+realDate();
 
 // History Section
 document.getElementById('fix-mobile').addEventListener('click', function(){
@@ -143,8 +143,6 @@ document.getElementById('fix-searching').addEventListener('click', function(){
     `;
     document.getElementById('history').appendChild(div);
 });
-
-
 
 // Remove History Section
 document.getElementById('remove-history').addEventListener('click', function(){
