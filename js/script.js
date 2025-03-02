@@ -23,7 +23,8 @@ for (const btn of buttons) {
     btn.addEventListener('click', function(){
         alert('Board Updated Successfully');
         btn.disabled = true;
-        btn.style.backgroundColor = "gray";
+        btn.classList.add('bg-gray-300', 'text-gray-400');
+        btn.classList.remove('bg-blue-500', 'text-white');
 
         let taskNumber = document.getElementById('task');
         let convertedTaskNumber = parseInt(taskNumber.innerText);
